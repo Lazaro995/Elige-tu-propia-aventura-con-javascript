@@ -86,7 +86,7 @@ function ruta7() {
         ruta3();
     }
     else if (decision == 2) {
-        ruta3();
+        ruta10();
     }
     else {
         alert("Decision Inválida");
