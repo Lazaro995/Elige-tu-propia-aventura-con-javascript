@@ -1,3 +1,10 @@
+function Aventurero(nombre, edad, sexo) {
+    this.nombre = nombre;
+    this.edad   = edad;
+    this.sexo  = sexo;
+}
+const Aventurero1 = new Aventurero("Ulrich, 16, m")
+let inventario= ["billetera", "porro"]
 ruta0()
 function ruta0() {
     alert("Estas en tu casa aburrido, es viernes por la noche y no tenes nada para hacer, tenes pensado comer algo, fumarte un porro y quedarte toda la noche escuchando música y boludeando en Youtube, mientras te estas haciendo unas milanesas escuchas que suena tu teléfono, es Martín, te dice si queres salir a tomar algo a la noche, que se junta con unos amigos de la facultad");
