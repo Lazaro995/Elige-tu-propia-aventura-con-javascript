@@ -32,7 +32,7 @@ function ruta2() {
     alert("Le das la razón a Martín y les decís que la fiesta esta muy buena, que seria una lastima sacar a toda la gente de la fiesta que la esta pasando tan bien, y que la mayoría de los boliches van a estar cerrados a esa hora, el resto acepta tu postura y siguen tomando y fumando")
     alert("Un rato mas tarde ves que lo llaman a Martín, es la policía, algunos vecinos se quejaron del ruido y ahora quieren que se vayan todos de la casa, lo seguís a Martín hasta la puerta y ves que hay 2 policías y atrás vez al patrullero, la fiesta termino y todos tienen que irse, ya es casi de día y te empezas a sentir descompuesto, decidís tomarte un colectivo y volverte a tu casa.")
     alert("FIN")
-    ruta0("Un rato mas tarde ves que lo llaman a Martín, es la policía, algunos vecinos se quejaron del ruido y ahora quieren que se vayan todos de la casa, lo seguís a Martín hasta la puerta y ves que hay 2 policías y atrás vez al patrullero, la fiesta termino y todos tienen que irse, ya es casi de día y te empezas a sentir descompuesto, decidís tomarte un colectivo y volverte a tu casa.")
+    ruta0()
 }//final2
 function ruta3() {
     alert("Le decís que si tomas, pero que por el momento no tenes movida, te dice que tiene una entera y te ofrece si queres la mitad de una, te la regala, le decís que si y te dice que lo acompañes al baño, una vez que entran en el baño la cortan con un cuchillo y se la colan, vuelven a la fiesta");
