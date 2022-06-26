@@ -1,6 +1,6 @@
 let primero = document.getElementById("primero");
 let segundo = document.getElementById("segundo");
-
+let nombreusuario = localStorage.setItem("Nombre", prompt("¿Cual es tu nombre?"));
 function comienzo() {
   let relato = historia.find((el) => el.ruta == 0);
   primeraParte(relato);
@@ -8,9 +8,9 @@ function comienzo() {
 comienzo();
 
 function primeraParte(relato) {
-    console.log(relato);
+  console.log(relato);
   primero.innerText = relato.aventura;
-  
+
   segundo.innerHTML = `<button id="1" type="button" class="btn btn-info">${relato.opcion1}</button>
     <button id="2" type="button" class="btn btn-info">${relato.opcion2}</button>`;
 
@@ -39,20 +39,20 @@ function primeraParte(relato) {
   if (relato.fin) {
     segundo.innerHTML = "FIN";
     setTimeout(() => {
-        segundo.innerHTML = `<button id="3" type="button" class="btn btn-success">Volver a Empezar</button>`
-        let btn3 = document.getElementById("3");
-            btn3.addEventListener("click", () => {
-            comienzo()
-            });
+      segundo.innerHTML = `<button id="3" type="button" class="btn btn-success">Volver a Empezar</button>`
+      let btn3 = document.getElementById("3");
+      btn3.addEventListener("click", () => {
+        comienzo()
+      });
     }, 3000);
   }
 
   if (relato.op3 == 2) {
     let tercerBtn = document.createElement('button')
-    tercerBtn.className= 'btn btn-info'
+    tercerBtn.className = 'btn btn-info'
     tercerBtn.id = '3'
     tercerBtn.innerText = `${relato.opcion3}`
-   
+
     segundo.append(tercerBtn);
     let btn3 = document.getElementById("3");
     btn3.addEventListener("click", () => {
