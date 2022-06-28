@@ -6,9 +6,10 @@ function comienzo() {
   let relato = historia.find((el) => el.ruta == 0);
   primeraParte(relato);
 }
-const registroedad = edad >=18 && comienzo() //true
-
-alert ("No eres mayor de edad para jugar este juego")
+const registroedad = edad >=18 && comienzo();
+if (edad < 18){
+  alert("No tienes edad para jugar este juego");
+}
 
 function primeraParte(relato) {
   console.log(relato);
