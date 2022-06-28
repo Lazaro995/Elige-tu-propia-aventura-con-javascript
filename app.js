@@ -1,11 +1,14 @@
 let primero = document.getElementById("primero");
 let segundo = document.getElementById("segundo");
 let nombreusuario = localStorage.setItem("Nombre", prompt("¿Cual es tu nombre?"));
+let edad = prompt("¿Cuantos años tienes?")
 function comienzo() {
   let relato = historia.find((el) => el.ruta == 0);
   primeraParte(relato);
 }
-comienzo();
+const registroedad = edad >=18 && comienzo() //true
+
+alert ("No eres mayor de edad para jugar este juego")
 
 function primeraParte(relato) {
   console.log(relato);
