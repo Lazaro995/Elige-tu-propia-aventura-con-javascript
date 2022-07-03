@@ -8,7 +8,8 @@ function comienzo() {
 }
 const registroedad = edad >=18 && comienzo();
 if (edad < 18){
-  alert("No tienes edad para jugar este juego");
+  Swal.fire({
+    title: "No tienes edad para jugar este juego"})
 }
 
 function primeraParte(relato) {
