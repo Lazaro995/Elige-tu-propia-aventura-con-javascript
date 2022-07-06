@@ -6,10 +6,11 @@ function comienzo() {
   let relato = historia.find((el) => el.ruta == 0);
   primeraParte(relato);
 }
-const registroedad = edad >=18 && comienzo();
-if (edad < 18){
+const registroedad = edad >= 18 && comienzo();
+if (edad < 18) {
   Swal.fire({
-    title: "No tienes edad para jugar este juego"})
+    title: "No tienes edad para jugar este juego"
+  })
 }
 
 function primeraParte(relato) {
@@ -41,8 +42,23 @@ function primeraParte(relato) {
     });
     // siguienteHistoria(4, relato);
   }
+  
   if (relato.fin) {
     segundo.innerHTML = "FIN";
+    const inventario = document.querySelector("#primero")
+
+    fetch("/inventario.json")
+      .then((res) => res.json())
+      .then((data) =>{
+        const test= data.nombre
+          const li = document.createElement("li")
+          li.innerHTML = `
+      <h5>${test}</h5>
+      <hr>
+      `
+          inventario.append(li)
+  
+        })
     setTimeout(() => {
       segundo.innerHTML = `<button id="3" type="button" class="btn btn-success">Volver a Empezar</button>`
       let btn3 = document.getElementById("3");
@@ -87,3 +103,20 @@ function siguienteHistoria(id, relato) {
       break;
   }
 }
+
+/*if (relato.fin) {
+  const inventario = document.querySelector("#listado")
+
+  fetch("/inventario.json")
+    .then((res) => res.json())
+    .then((data) =>{
+      data.forEach((ropa) => {
+        const li = document.createElement("li")
+        li.innerHTML = `
+    <h5>${ropa.nombre}</h5>
+    <hr>
+    `})
+        lista.append(li)
+
+      })
+}*/
