@@ -1,16 +1,23 @@
 let primero = document.getElementById("primero");
 let segundo = document.getElementById("segundo");
 let nombreusuario = localStorage.setItem("Nombre", prompt("¿Cual es tu nombre?"));
-let edad = prompt("¿Cuantos años tienes?")
 function comienzo() {
   let relato = historia.find((el) => el.ruta == 0);
   primeraParte(relato);
 }
-const registroedad = edad >= 18 && comienzo();
+function calculateAge() {
+  let d = document.getElementById("user_date").value;
+  let inDate = new Date(d);
+  let anio = inDate.getFullYear();
+  let fec_actual = new Date();
+  let fec_anio = fec_actual.getFullYear();
+  const edad = fec_anio - anio;
+  const registroedad = edad >= 18 && comienzo();
 if (edad < 18) {
   Swal.fire({
     title: "No tienes edad para jugar este juego"
   })
+}
 }
 
 function primeraParte(relato) {
@@ -42,23 +49,23 @@ function primeraParte(relato) {
     });
     // siguienteHistoria(4, relato);
   }
-  
+
   if (relato.fin) {
     segundo.innerHTML = "FIN";
     const inventario = document.querySelector("#primero")
 
     fetch("/inventario.json")
       .then((res) => res.json())
-      .then((data) =>{
-        const test= data.nombre
-          const li = document.createElement("li")
-          li.innerHTML = `
+      .then((data) => {
+        const test = data[0].nombre
+        const li = document.createElement("li")
+        li.innerHTML = `
       <h5>${test}</h5>
       <hr>
       `
-          inventario.append(li)
-  
-        })
+        inventario.append(li)
+
+      })
     setTimeout(() => {
       segundo.innerHTML = `<button id="3" type="button" class="btn btn-success">Volver a Empezar</button>`
       let btn3 = document.getElementById("3");
