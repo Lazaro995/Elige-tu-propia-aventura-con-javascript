@@ -1,6 +1,5 @@
 let primero = document.getElementById("primero");
 let segundo = document.getElementById("segundo");
-let nombreusuario = localStorage.setItem("Nombre", prompt("¿Cual es tu nombre?"));
 function comienzo() {
   let relato = historia.find((el) => el.ruta == 0);
   primeraParte(relato);
@@ -12,12 +11,13 @@ function calculateAge() {
   let fec_actual = new Date();
   let fec_anio = fec_actual.getFullYear();
   const edad = fec_anio - anio;
+  let edadusuario = localStorage.setItem("edad", JSON.stringify(edad));
   const registroedad = edad >= 18 && comienzo();
-if (edad < 18) {
-  Swal.fire({
-    title: "No tienes edad para jugar este juego"
-  })
-}
+  if (edad < 18) {
+    Swal.fire({
+      title: "No tienes edad para jugar este juego"
+    })
+  }
 }
 
 function primeraParte(relato) {
